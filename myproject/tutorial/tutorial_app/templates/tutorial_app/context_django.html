@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    var x = {{ x }}
+    <br>
+    {% for element in y %}
+        {% if element == 1 or element == 2 or element == 5 %}
+            {{ element }}
+        {% endif %}
+    {% endfor %}
+</body>
+</html>
+

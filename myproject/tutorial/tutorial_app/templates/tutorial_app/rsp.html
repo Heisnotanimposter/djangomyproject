@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            border: 1px solid red;
+            width: 437px;
+            height: 300px;
+            text-align: center;
+            color: chocolate;
+        }
+
+        .text_computer {
+            font-size: 50px;
+        }
+
+        .btn_rock {
+            background-color: rgb(255, 0, 0)
+        }
+
+        .btn_paper {
+            background-color: rgb(0, 100, 0)
+        }
+
+        .btn_sissors {
+            background-color: rgb(0, 0, 255)
+        }
+
+        .btn_base {
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        function rsp(my_rsp) {
+            var computer_text_element = document.getElementById("computer_text");
+            var result = document.getElementById("result_text")
+            let random_value = Math.floor(Math.random() * 3);
+            if (random_value == 0) {
+                computer_text_element.innerText = "Rock(바위)!"
+                if (my_rsp == 'rock') {
+                    result.innerText = "result : Draw!"
+                } else if (my_rsp == 'sissor') {
+                    result.innerText = "result : Lose!"
+                } else {
+                    result.innerText = "result : Win!"
+                }
+            } else if (random_value == 1) {
+                computer_text_element.innerText = "Sissor(가위)!"
+                if (my_rsp == 'rock') {
+                    result.innerText = "result : Win!"
+                } else if (my_rsp == 'sissor') {
+                    result.innerText = "result : Draw!"
+                } else {
+                    result.innerText = "result : Lose!"
+                }
+            } else {
+                computer_text_element.innerText = "Paper(보)!"
+                if (my_rsp == 'rock') {
+                    result.innerText = "result : Lose!"
+                } else if (my_rsp == 'sissor') {
+                    result.innerText = "result : Win!"
+                } else {
+                    result.innerText = "result : Draw!"
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <a class="text_computer" id="computer_text">Rock!</br>Sissor!</br>Paper!</a>
+</div>
+<div>
+    <button class="btn_rock btn_base" onclick="rsp('rock')">Rock(바위)</button>
+    <button class="btn_sissors btn_base" onclick="rsp('sissor')">Sissor(가위)</button>
+    <button class="btn_paper btn_base" onclick="rsp('paper')">Paper(보)</button>
+</div>
+<div>
+    <h1 id="result_text">result :</h1>
+</div>
+</body>
+
+
+</html>

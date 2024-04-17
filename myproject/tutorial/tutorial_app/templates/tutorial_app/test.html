@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function changeText(my_result) {
+            var element = document.getElementById("btn_func");
+            if (element.innerText == 'result') {
+                element.innerText = my_result;
+            } else {
+                element.innerText = 'result';
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="btn_func">result</div>
+<button type="button" onclick="changeText('change!')">changeText</button>
+</body>
+</html>
+
+
+
+
